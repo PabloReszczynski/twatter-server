@@ -1,7 +1,6 @@
 (ns server.core
-  (:gen-class))
+  (:require [server.routes :refer [app]]
+            [compojure.handler :as handler]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(def handler
+  (handler/site app))
